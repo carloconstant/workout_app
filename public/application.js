@@ -3875,7 +3875,7 @@ var signUp = function signUp(data) {
   console.log('data is ', data);
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl + '/sign-up',
+    url: config.apiUrl + '/sign-up/',
     data: data
   });
 };
@@ -3883,14 +3883,14 @@ var signUp = function signUp(data) {
 var signIn = function signIn(data) {
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl + '/sign-in',
+    url: config.apiUrl + '/sign-in/',
     data: data
   });
 };
 var signOut = function signOut(data) {
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/sign-out',
+    url: config.apiUrl + '/sign-out/',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
@@ -3902,59 +3902,19 @@ var changePassword = function changePassword(data) {
 
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/change-password',
+    url: config.apiUrl + '/change-password/',
     data: data,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
   });
 };
-var index = function index() {
-  return $.ajax({
-    method: 'GET',
-    url: config.apiUrl + '/games',
-    headers: {
-      Authorization: 'number of games ' + store.user.token
-    }
-  });
-};
-var show = function show(games) {
-  return $.ajax({
-    method: 'GET',
-    url: config.apiUrl + '/games/' + games.id,
-    header: {
-      Authorization: ' games id' + store.user.token
-    }
-  });
-};
-var create = function create(data) {
-  return $.ajax({
-    method: 'POST',
-    url: config.apiUrl + '/games/',
-    header: {
-      Authorization: 'games id' + store.user.token
-    },
-    data: data
-  });
-};
-var update = function update(data) {
-  return $.ajax({
-    method: 'PATCH',
-    url: config.apiUrl + '/games' + data.games.id,
-    headers: {
-      Authorization: 'Token token= ' + store.user.token
-    }
-  });
-};
+
 module.exports = {
   signUp: signUp,
   signIn: signIn,
   signOut: signOut,
-  changePassword: changePassword,
-  index: index,
-  show: show,
-  create: create,
-  update: update
+  changePassword: changePassword
 };
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(47)))
 
