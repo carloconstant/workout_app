@@ -24,15 +24,15 @@ body {
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: red;
   text-align: center;
-  padding: 14px 16px;
+  padding: 5px 15px;
   text-decoration: none;
   font-size: 17px;
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: blue;
   color: black;
 }
 
@@ -70,13 +70,54 @@ body {
     </head>
     <body>
       <div class="topnav" id="myTopnav">
-        <ul>
-          <li><a href="#info">Info</a></li>
-          <li><a href="#change-pw">Change Password</a></li>
-          <li><a href="#sign-out">Sign Out</a></li>
-        </ul>
+        <div class="crud">
+          <ul>
+            <li><a href="#info">Info</a></li>
+            <li><a href="#change-pw">Change Password</a></li>
+            <li><a href="/sign-out"> Sign Out</a></li>
+          </ul>
+        </div>
+
+        <div class="auth">
+          <ul>
+            <li><a href="#sign-in">Sign In</a></li>
+          </ul>
+        </div>
       </div>
+
       <h1>Work-Out App</h1>
-      <>
+
+      <div class="auth">
+
+        <form id="sign-in">
+          <h2>sign in</h2>
+          <input name="credentials[email]" type="text" placeholder="Username">
+          <input name="credentials[password]" type="password" placeholder="an example password">
+          <button type ="submit">submit</button>
+        </form>
+        <hr>
+
+        <form id="sign-up">
+          <h2>Sign Up</h2>
+          <input  type="text" name="credentials[email]" placeholder="Enter Email Here">
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+          <button type ="submit">submit</button>
+        </form>
+
+      </div>
+
+      <div class="crud">
+
+        <div class="topnav" id="myTopnav">
+          <ul>
+            <li><a href="/index">history</a></li>
+            <li><a href="/show">search for a set</a></li>
+            <li><a href="/sets">New set</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="error-message"></div>
     </body>
 </html>
